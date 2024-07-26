@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload specific files
-          path: 'personal_page.html'
+          path: 'index.html'
 
       - name: Upload CSS
         uses: actions/upload-pages-artifact@v3

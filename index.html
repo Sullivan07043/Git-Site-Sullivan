@@ -3,127 +3,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shuhao Zhang - Personal Page</title>
+<title>Shuhao (Sullivan) Zhang — UC San Diego CSE</title>
+<meta name="description" content="Personal page of Shuhao (Sullivan) Zhang — M.S. in CSE at UC San Diego. Research on LLM reasoning, data-centric AI, agentic systems, and reinforcement learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<div class="photo-container">
-<img src="personal pic.jpg" alt="Shuhao Zhang" class="profile-photo">
+
+<!-- Geometric background decorations -->
+<div class="bg-deco" aria-hidden="true">
+  <svg class="deco deco-sun" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" /></svg>
+  <svg class="deco deco-tri" viewBox="0 0 200 200"><polygon points="100,10 190,190 10,190" /></svg>
+  <svg class="deco deco-wave" viewBox="0 0 400 80" preserveAspectRatio="none">
+    <path d="M0 40 Q50 0 100 40 T200 40 T300 40 T400 40" fill="none" stroke-width="6"/>
+    <path d="M0 60 Q50 20 100 60 T200 60 T300 60 T400 60" fill="none" stroke-width="6"/>
+  </svg>
+  <svg class="deco deco-grid" viewBox="0 0 100 100">
+    <defs><pattern id="dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2"/></pattern></defs>
+    <rect width="100" height="100" fill="url(#dots)"/>
+  </svg>
+  <svg class="deco deco-circle-sm" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke-width="6"/></svg>
 </div>
-<div class="header-text">
-<h1>Shuhao Zhang</h1>
-<p>Tel: +1 (858) 346 3212 </p>
-<p>Personal Email: zhangSH2025@163.com / Sullivanzhang361@gmail.com</p>
-<p>Univ Email: shz127@ucsd.edu</p>
-<p>Github Page: https://github.com/Sullivan07043/</p>
-</div>
+
+<!-- Top navigation -->
+<nav class="topnav">
+  <a href="#top" class="brand">
+    <span class="brand-mark"></span>
+    <span class="brand-name">SZ.</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header id="top" class="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow">UC SAN DIEGO · CSE</span>
+      <h1 class="hero-title">
+        Shuhao <span class="accent">(Sullivan)</span><br>
+        <span class="outline">Zhang</span>
+      </h1>
+      <p class="hero-tag">
+        M.S. student at UC San Diego, working on
+        <strong>LLM reasoning</strong>, <strong>data-centric AI</strong>,
+        <strong>agentic systems</strong>, and <strong>reinforcement learning</strong>
+        with <a href="https://pengtaoxie.github.io/" target="_blank" rel="noopener">Pengtao Xie Lab</a>.
+      </p>
+      <div class="hero-meta">
+        <a class="chip chip-primary" href="mailto:shz127@ucsd.edu">shz127@ucsd.edu</a>
+        <a class="chip" href="https://github.com/Sullivan07043/" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="chip" href="https://scholar.google.com/citations?user=Rj13ryoAAAAJ&hl=en" target="_blank" rel="noopener">Scholar ↗</a>
+        <a class="chip" href="https://sullivan07043.github.io/SCOPE/" target="_blank" rel="noopener">SCOPE Project ↗</a>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap">
+      <div class="photo-shapes">
+        <span class="shape sq"></span>
+        <span class="shape ci"></span>
+        <span class="shape tr"></span>
+      </div>
+      <div class="photo-frame">
+        <img src="profile.png" alt="Portrait of Shuhao Zhang" class="profile-photo">
+      </div>
+      <div class="photo-tag">San Diego · CA</div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>LLM Reasoning</span><span>•</span>
+      <span>Data-centric AI</span><span>•</span>
+      <span>Agentic Systems</span><span>•</span>
+      <span>Reinforcement Learning</span><span>•</span>
+      <span>Routing & Defense</span><span>•</span>
+      <span>LLM Reasoning</span><span>•</span>
+      <span>Data-centric AI</span><span>•</span>
+      <span>Agentic Systems</span><span>•</span>
+      <span>Reinforcement Learning</span><span>•</span>
+      <span>Routing & Defense</span><span>•</span>
+    </div>
+  </div>
 </header>
-<section id="education">
-<h2>Education</h2>
-<h3>University of California, San Diego</h3>
-<p>2025.09 - ?</p>
-<p><strong>Department:</strong>Department of Computer Science and Engineering</p>
-<p><strong>Major:</strong> Computer Science (AI direction)</p>
-<h3>University of Science and Technology Beijing</h3>
-<p>2021.09 - 2025.06</p>
-<p><strong>School:</strong> Economics and Management, Department of Management Science and Engineering</p>
-<p><strong>Major:</strong> Big Data Management and Applications</p>
-<p><strong>GPA:</strong> 3.75/4.0</p>
-<h3>University of California San Diego</h3>
-<p>Overseas Exchanges | 2023.09 - 2024.01</p>
-<p><strong>GPA:</strong> 3.9/4.0</p>
-<p><strong>Core Courses:</strong> DSC-20, DSC-40A, COGS-118A</p>
-<h3>North Carolina State University, USA</h3>
-<p>Winter Research Program | 2023.01 - 2023.02</p>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-head">
+    <span class="num">01</span>
+    <h2>About</h2>
+  </div>
+  <div class="about-grid">
+    <p class="lead">
+      I am a graduate researcher interested in making large language models
+      <em>more reliable, more controllable, and more cost-aware</em>. My recent work
+      focuses on <strong>pre-hoc routing</strong> for both safety
+      (prompt-injection defense) and efficiency (model selection under budget),
+      using lightweight estimators trained with reinforcement learning.
+    </p>
+    <ul class="fact-list">
+      <li><span>📍</span> San Diego, California</li>
+      <li><span>🎓</span> M.S. CSE @ UC San Diego (GPA 3.94 / 4.0)</li>
+      <li><span>🧪</span> Research Intern · Pengtao Xie Lab</li>
+      <li><span>🌅</span> Expected graduation: 2027</li>
+    </ul>
+  </div>
 </section>
-<section id="skills">
-<h2>Skills</h2>
-<p><strong>Computer Skills:</strong> C, Java, Python, MATLAB, Arduino, HTML, Linux, PyTorch, TensorFlow</p>
-<p><strong>English Skills:</strong> TOEFL (104), IELTS (7.5), GRE (321+3.5)</p>
+
+<!-- RESEARCH / PUBLICATIONS -->
+<section id="research" class="section section-alt">
+  <div class="section-head">
+    <span class="num">02</span>
+    <h2>Selected Research</h2>
+  </div>
+
+  <div class="cards">
+
+    <article class="card">
+      <div class="card-tags">
+        <span class="tag tag-coral">EMNLP 2026</span>
+        <span class="tag">Under Review</span>
+        <span class="tag tag-blue">LLM Safety</span>
+      </div>
+      <h3 class="card-title">SCOUT: A Predictor-Guided System for Prompt Injection Detection via Detector Fingerprints</h3>
+      <ul>
+        <li>Designed a <strong>pre-hoc risk routing framework</strong> inspired by cognitive accounts of expert intuition, modeling fast pre-hoc judgment through historical experience and short calibrated reasoning.</li>
+        <li>Built a lightweight risk estimator that routes untrusted inputs to defense tiers of increasing strength, from heuristic filtering to stronger protective mechanisms.</li>
+        <li>Investigated the <em>safety–cost trade-off</em> of adaptive defense policies, achieving lower attack success rates with minimal degradation on benign tasks.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card-tags">
+        <span class="tag tag-coral">ICML 2026</span>
+        <span class="tag tag-sage">Accepted</span>
+        <span class="tag tag-blue">LLM Routing · RL</span>
+      </div>
+      <h3 class="card-title">Models Under SCOPE: Scalable and Controllable Routing via Pre-hoc Reasoning</h3>
+      <ul>
+        <li>Developed a <strong>budget-aware LLM routing framework</strong> that predicts per-model answer correctness and token cost from retrieved anchor evidence, enabling controllable cost–quality trade-offs at inference time.</li>
+        <li>Built an <strong>anchor-based model fingerprint pipeline</strong> to support newly added / unseen models without per-task re-tuning.</li>
+        <li>Trained the routing policy with <strong>reinforcement learning</strong> to optimize utility under deployment constraints — up to <strong>95.1% cost reduction</strong> or <strong>25.7% accuracy gain</strong> under different priorities.</li>
+      </ul>
+      <p class="card-cite">Qi Cao*, <strong>Shuhao Zhang*</strong>, Ruizhe Zhou, Ruiyi Zhang, Peijia Qin, Pengtao Xie. ICML 2026. arXiv:2601.22323.
+        <a href="https://sullivan07043.github.io/SCOPE/" target="_blank" rel="noopener"> Project page ↗</a>
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-tags">
+        <span class="tag tag-blue">IPM 2024</span>
+        <span class="tag">Recommendation</span>
+      </div>
+      <h3 class="card-title">IDC-CDR: Intent Disentangled Cross-Domain Recommendation</h3>
+      <ul>
+        <li>Cross-domain recommendation model that disentangles user intent for stronger transfer.</li>
+        <li>Emphasized <em>interpretability</em> and explainability of latent intent factors.</li>
+      </ul>
+      <p class="card-cite">Jing Xu, Mingxin Gan, Hang Zhang, <strong>Shuhao Zhang</strong>. <em>Information Processing and Management</em>, 2024.</p>
+    </article>
+
+    <article class="card">
+      <div class="card-tags">
+        <span class="tag tag-sage">Water 2024</span>
+        <span class="tag">ML × Environmental</span>
+      </div>
+      <h3 class="card-title">ML for Short-Term Prediction of Dissolved Oxygen in a Microtidal Estuary</h3>
+      <ul>
+        <li>Applied ML to biomedical-style time-series prediction; improved DO forecasting accuracy.</li>
+        <li>Showed transferability of techniques to healthcare / biological data modeling.</li>
+      </ul>
+      <p class="card-cite">Mina Gachloo, Qianqian Liu, Yang Song, Guozhi Wang, <strong>Shuhao Zhang</strong>, Nathan Hall. <em>Water</em> 16(14):1998, 2024.</p>
+    </article>
+
+  </div>
 </section>
-<section id="publications">
-<h2>Publications</h2>
-<ul>
-<li>Shuhao Zhang, Jiayi Yu, Jiarui Li. Stable Random Sampling (SRS): A New Method to Refine Causal Masking in Decoder-Only Transformer. <em>Machine Learning and Automation (CONF-MLA 2024)</em>.</li>
-<li>Jing Xu, Mingxin Gan, Hang Zhang, Shuhao Zhang. IDC-CDR: Cross-domain Recommendation based on Intent Disentanglement and Contrast Learning. <em>Information Processing and Management</em> (2024).</li>
-<li>Mina Gachloo, Qianqian Liu, Yang Song, Guozhi Wang, Shuhao Zhang, Nathan Hall. Using Machine Learning Models for Short-Term Prediction of Dissolved Oxygen in a Microtidal Estuary. <em>Water</em>. 2024; 16(14):1998.</li>
-</ul>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="section-head">
+    <span class="num">03</span>
+    <h2>Education</h2>
+  </div>
+
+  <ol class="timeline">
+    <li>
+      <div class="t-dot"></div>
+      <div class="t-body">
+        <span class="t-date">2025 — 2027 (expected)</span>
+        <h3>University of California, San Diego</h3>
+        <p>M.S. in Computer Science and Engineering</p>
+        <p class="muted">Current GPA: <strong>3.94 / 4.0</strong></p>
+      </div>
+    </li>
+    <li>
+      <div class="t-dot"></div>
+      <div class="t-body">
+        <span class="t-date">2021 — 2025</span>
+        <h3>University of Science and Technology Beijing</h3>
+        <p>B.S. in Data Science</p>
+        <p class="muted">Overall GPA <strong>3.76 / 4.0</strong> · Top 7% of class</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-dot"></div>
+      <div class="t-body">
+        <span class="t-date">2023.09 — 2024.01</span>
+        <h3>UC San Diego — Overseas Exchange</h3>
+        <p>Core Courses: DSC-20, DSC-40A, COGS-118A · GPA <strong>3.9 / 4.0</strong></p>
+      </div>
+    </li>
+    <li>
+      <div class="t-dot"></div>
+      <div class="t-body">
+        <span class="t-date">2023.01 — 2023.02</span>
+        <h3>North Carolina State University — Winter Research Program</h3>
+      </div>
+    </li>
+  </ol>
 </section>
-<section id="research">
-<h2>Research Experience</h2>
-<h3>Optimization in Causal Masking Part of Decoder-Only Transformer</h3>
-<p><strong>Supervisor:</strong> Prof. David Woodruff, Department of Computer Science, Carnegie Mellon University</p>
-<p><strong>Duration:</strong> 2024.07 - Present</p>
-<ul>
-<li>Led a 3-member team, proposing the "Stable Random Sampling" algorithm for improved efficiency in decoder-only transformers.</li>
-<li>Reduced training time by 30% and decreased loss rate by 50% compared to traditional methods.</li>
-<li>Co-authored a paper under review, serving as co-first author and corresponding author.</li>
-</ul>
-<h3>Use Machine Learning Models to Predict Dissolved Oxygen in a Microtidal Estuary</h3>
-<p><strong>Supervisor:</strong> Prof. Yang Song, GEARS in North Carolina State University</p>
-<p><strong>Duration:</strong> 2023.01 - 2024.01</p>
-<ul>
-<li>Applied machine learning models to predict hypoxic conditions in the Neuse River Estuary.</li>
-<li>Implemented neural networks and presented a modified RNN model for accurate DO condition prediction.</li>
-</ul>
-<h3>Cross-domain Recommendation Research</h3>
-<p><strong>Supervisor:</strong> Prof. Mingxin Gan, School of Economics and Management, USTB</p>
-<p><strong>Duration:</strong> 2023.02 - 2024.01</p>
-<ul>
-<li>Assisted in data processing and cleaning for Amazon dataset.</li>
-<li>Participated in algorithm tuning and testing using TensorFlow for deep-learning neural networks.</li>
-</ul>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section section-alt">
+  <div class="section-head">
+    <span class="num">04</span>
+    <h2>Experience</h2>
+  </div>
+
+  <div class="cards cards-2">
+    <article class="card">
+      <div class="card-tags"><span class="tag tag-coral">2025</span><span class="tag">Industry</span></div>
+      <h3 class="card-title">Airport Warehouse Operation Optimization</h3>
+      <p class="muted">Shanghai Pudong International Airport</p>
+      <ul>
+        <li>Applied optimization and ML to logistics scheduling and resource allocation.</li>
+        <li>Simplified the project for industrial deployment; built systems experience with applied ML.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card-tags"><span class="tag tag-blue">2024</span><span class="tag">Simulation · AGV</span></div>
+      <h3 class="card-title">Model Simulation and Algorithm Intern</h3>
+      <p class="muted">Shanghai Huapu Zhihui Automation System Engineering Co., Ltd.</p>
+      <ul>
+        <li>Built simulation models for airport warehousing systems.</li>
+        <li>Developed AGV scheduling optimization in Python; path planning with Dijkstra.</li>
+        <li>Evaluated scheduling strategies and produced simulation reports.</li>
+      </ul>
+    </article>
+  </div>
 </section>
-<section id="projects">
-<h2>Course Projects</h2>
-<h3>Research on Recommendation Algorithm Analysis of Amazon Book Review Dataset</h3>
-<p><strong>Date:</strong> 2024.06</p>
-<ul>
-<li>Explored matrix factorization and graph neural networks in recommendation systems.</li>
-<li>Evaluated algorithms including NMF, SVD, GCN, LGCN, and GAN on the Amazon book review dataset.</li>
-<li>Analyzed algorithm performance across efficiency, accuracy, and cold start scenarios.</li>
-</ul>
-<h3>Research on Momentum Change in Tennis (MCM)</h3>
-<p><strong>Date:</strong> 2024.02</p>
-<ul>
-<li>Used KPCA for feature selection in analyzing tennis players' momentum changes.</li>
-<li>Applied BP neural networks and logistic regression for predictions.</li>
-<li>Proposed a meta-learning solution to improve generalization across tasks.</li>
-</ul>
-<h3>Research on Supervised Machine Learning Algorithms</h3>
-<p><strong>Date:</strong> 2023.12</p>
-<ul>
-<li>Compared KNN, Naïve Bayes, and Logistic Regression across various datasets.</li>
-<li>Optimized hyperparameters and evaluated performance using cross-validation.</li>
-<li>Analyzed algorithm performance across different data split ratios.</li>
-</ul>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="section-head">
+    <span class="num">05</span>
+    <h2>Skills</h2>
+  </div>
+
+  <div class="skill-grid">
+    <div class="skill-block">
+      <h4>Machine Learning &amp; AI</h4>
+      <div class="pills">
+        <span>PyTorch</span><span>TensorFlow</span><span>RAG</span>
+        <span>Eval Harness</span><span>Multi-agent Workflows</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <h4>Optimization &amp; Training</h4>
+      <div class="pills">
+        <span>LoRA</span><span>Curriculum Schedules</span>
+        <span>Docker</span><span>Accelerate</span><span>W&amp;B</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <h4>Programming &amp; Systems</h4>
+      <div class="pills">
+        <span>Python</span><span>C++</span><span>Java</span>
+        <span>Linux</span><span>Git</span><span>Docker</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <h4>Languages</h4>
+      <div class="pills">
+        <span>TOEFL 104</span><span>IELTS 7.5</span><span>GRE 321 + 3.5</span>
+      </div>
+    </div>
+  </div>
 </section>
-<section id="internship">
-<h2>Internship Experience</h2>
-<h3>Model Simulation and Algorithm Intern</h3>
-<p><strong>Company:</strong> Shanghai Huapu Zhihui Automation System Engineering Co., Ltd.</p>
-<p><strong>Duration:</strong> 2024.07 - 2024.08</p>
-<ul>
-<li>Established simulation models for airport warehousing systems.</li>
-<li>Developed AGV scheduling optimization algorithms using Python.</li>
-<li>Implemented path planning based on the Dijkstra algorithm.</li>
-<li>Evaluated scheduling strategies and generated detailed simulation reports.</li>
-</ul>
+
+<!-- HONORS -->
+<section id="honors" class="section section-alt">
+  <div class="section-head">
+    <span class="num">06</span>
+    <h2>Honors &amp; Awards</h2>
+  </div>
+  <ul class="honors">
+    <li><span class="dot"></span> National Third Prize · National English Competition for College Students (2022)</li>
+    <li><span class="dot"></span> Outstanding Student Leader · USTB (2022)</li>
+    <li><span class="dot"></span> People's Second-class Scholarship · USTB (2022)</li>
+    <li><span class="dot"></span> Third Prize · National Statistical Modeling Competition (Beijing Zone, 2023)</li>
+  </ul>
 </section>
-<section id="honors">
-<h2>Honors & Awards</h2>
-<ul>
-<li>Nation-level Third Prize of National English Competition for College Students (2022.05)</li>
-<li>Outstanding Student Leader of University of Science and Technology Beijing (2022.09)</li>
-<li>People's Second-class Scholarship of USTB (2022.10)</li>
-<li>Third Prize of National Statistical Modeling Competition for College Students in Beijing Zone (2023.06)</li>
-</ul>
-</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <p class="foot-name">Shuhao (Sullivan) Zhang</p>
+      <p class="muted">Built with HTML &amp; CSS · California Geometric, 2026</p>
+    </div>
+    <div class="foot-links">
+      <a href="mailto:shz127@ucsd.edu">shz127@ucsd.edu</a>
+      <a href="https://github.com/Sullivan07043/" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=Rj13ryoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    </div>
+  </div>
+  <svg class="foot-wave" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 60 Q150 0 300 60 T600 60 T900 60 T1200 60 V80 H0 Z"/>
+  </svg>
+</footer>
+
 </body>
 </html>
-</body>
-</html>
-
-
-

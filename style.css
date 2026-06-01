@@ -1,23 +1,57 @@
 /* ================================================================
    Personal page — Shuhao (Sullivan) Zhang
    Layout reference: coder-qicao.github.io
-   Palette: deep navy background · white text · bright orange accent
-            · deep green badges/cards
+   Two themes (dark / light) controlled via [data-theme] on <html>
+   Palettes share: deep navy · white · bright orange · deep green
    ================================================================ */
 
-:root{
-  --bg:        #0B2E4F;     /* deep navy background        */
-  --bg-2:      #133A5F;     /* card background (lighter)   */
-  --bg-3:      #0F345A;     /* nested card                 */
+/* -------- Dark theme (default) -------- */
+:root,
+[data-theme="dark"]{
+  --bg:        #0B2E4F;
+  --bg-2:      #133A5F;
+  --bg-3:      #0F345A;
   --line:      rgba(255,255,255,.10);
   --line-2:    rgba(255,255,255,.18);
   --text:      #ECEFF4;
   --text-soft: #B7C2D0;
   --muted:     #8290A1;
-  --orange:    #FF7A29;     /* slightly brighter for dark bg */
-  --green:     #2F8266;     /* a touch lighter for dark bg   */
+  --orange:    #FF7A29;
+  --orange-h:  #ffb27a;
+  --green:     #2F8266;
+  --green-fg:  #7CC4A8;
   --green-bg:  rgba(47,130,102,.18);
-  --maxw:      820px;
+  --green-bd:  rgba(124,196,168,.40);
+  --orange-bg: rgba(255,122,41,.15);
+  --orange-bd: rgba(255,122,41,.45);
+  --topbar-bg: rgba(11, 46, 79, 0.85);
+  --shadow:    0 12px 32px rgba(0,0,0,.35);
+}
+
+/* -------- Light theme -------- */
+[data-theme="light"]{
+  --bg:        #FAF8F2;          /* warm off-white */
+  --bg-2:      #FFFFFF;          /* card */
+  --bg-3:      #F3EFE6;
+  --line:      rgba(11,46,79,.10);
+  --line-2:    rgba(11,46,79,.20);
+  --text:      #0B2E4F;          /* deep navy text */
+  --text-soft: #3A4A60;
+  --muted:     #6B7787;
+  --orange:    #D85B0E;          /* darker orange for contrast on white */
+  --orange-h:  #B14808;
+  --green:     #1F4E3D;          /* deeper green */
+  --green-fg:  #1F4E3D;
+  --green-bg:  rgba(31,78,61,.08);
+  --green-bd:  rgba(31,78,61,.35);
+  --orange-bg: rgba(216,91,14,.10);
+  --orange-bd: rgba(216,91,14,.40);
+  --topbar-bg: rgba(250, 248, 242, 0.85);
+  --shadow:    0 10px 28px rgba(11,46,79,.10);
+}
+
+:root{
+  --maxw: 820px;
 }
 
 *{ box-sizing: border-box; }
@@ -33,6 +67,7 @@ body{
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color .25s ease, color .25s ease;
 }
 
 a{
@@ -40,7 +75,7 @@ a{
   text-decoration: none;
   transition: color .15s ease;
 }
-a:hover{ color: #ffb27a; }
+a:hover{ color: var(--orange-h); }
 
 h1, h2, h3{
   font-family: "Cormorant Garamond", "Times New Roman", serif;
@@ -55,12 +90,13 @@ strong{ color: var(--text); font-weight: 600; }
 /* ============== Top bar ============== */
 .topbar{
   position: sticky; top: 0; z-index: 30;
-  display: flex; align-items: center;
+  display: flex; align-items: center; justify-content: space-between;
   padding: 18px clamp(20px, 4vw, 40px);
-  background: rgba(11, 46, 79, 0.85);
+  background: var(--topbar-bg);
   backdrop-filter: saturate(160%) blur(8px);
   -webkit-backdrop-filter: saturate(160%) blur(8px);
   border-bottom: 1px solid var(--line);
+  transition: background-color .25s ease, border-color .25s ease;
 }
 .topbar-brand{
   font-family: "Cormorant Garamond", serif;
@@ -69,6 +105,34 @@ strong{ color: var(--text); font-weight: 600; }
   color: var(--text);
 }
 .topbar-brand:hover{ color: var(--orange); }
+
+/* ---- Theme toggle button ---- */
+.theme-toggle{
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-soft);
+  border: 1px solid var(--line-2);
+  cursor: pointer;
+  padding: 0;
+  transition: color .15s ease, border-color .15s ease,
+              background-color .15s ease, transform .15s ease;
+}
+.theme-toggle:hover{
+  color: var(--orange);
+  border-color: var(--orange);
+  background: var(--orange-bg);
+  transform: rotate(-12deg);
+}
+.theme-toggle svg{
+  width: 18px; height: 18px;
+}
+/* show the right icon for each theme */
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon{ display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun{ display: block; }
+[data-theme="light"] .theme-toggle .icon-moon{ display: block; }
 
 /* ============== Page container ============== */
 .page{
@@ -88,7 +152,7 @@ strong{ color: var(--text); font-weight: 600; }
   border-radius: 16px;
   overflow: hidden;
   background: var(--bg-2);
-  box-shadow: 0 12px 32px rgba(0,0,0,.35);
+  box-shadow: var(--shadow);
   margin-bottom: 28px;
 }
 .avatar img{
@@ -130,7 +194,7 @@ strong{ color: var(--text); font-weight: 600; }
 .socials a:hover{
   color: var(--orange);
   border-color: var(--orange);
-  background: rgba(255,122,41,.08);
+  background: var(--orange-bg);
 }
 .socials svg{ width: 18px; height: 18px; }
 
@@ -141,6 +205,7 @@ strong{ color: var(--text); font-weight: 600; }
   border-radius: 14px;
   padding: 22px 26px;
   margin-bottom: 56px;
+  transition: background-color .25s ease, border-color .25s ease;
 }
 .card-label{
   font-family: "Inter", sans-serif;
@@ -179,6 +244,7 @@ strong{ color: var(--text); font-weight: 600; }
   margin: 0 0 14px;
   color: var(--text-soft);
 }
+.block p em{ color: var(--green); font-style: italic; font-weight: 500; }
 .block p strong{ color: var(--text); }
 
 /* ============== News ============== */
@@ -213,7 +279,8 @@ strong{ color: var(--text); font-weight: 600; }
   border-radius: 14px;
   padding: 22px 26px;
   margin-bottom: 18px;
-  transition: border-color .15s ease, transform .15s ease;
+  transition: border-color .15s ease, transform .15s ease,
+              background-color .25s ease;
 }
 .pub:hover{ border-color: var(--line-2); }
 .pub h3{
@@ -243,6 +310,7 @@ strong{ color: var(--text); font-weight: 600; }
   font-size: .98rem;
   line-height: 1.6;
 }
+.pub .desc em{ color: var(--green); font-style: italic; }
 .pub .actions{
   margin: 12px 0 0;
   font-size: .94rem;
@@ -257,13 +325,13 @@ strong{ color: var(--text); font-weight: 600; }
   padding: 3px 9px;
   border-radius: 4px;
   background: var(--green-bg);
-  color: #7CC4A8;
-  border: 1px solid rgba(124,196,168,.4);
+  color: var(--green-fg);
+  border: 1px solid var(--green-bd);
 }
 .badge-accent{
-  background: rgba(255,122,41,.15);
+  background: var(--orange-bg);
   color: var(--orange);
-  border-color: rgba(255,122,41,.45);
+  border-color: var(--orange-bd);
 }
 
 /* ============== Footer ============== */

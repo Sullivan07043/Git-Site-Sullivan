@@ -315,6 +315,7 @@ strong{ color: var(--text); font-weight: 600; }
   margin: 12px 0 0;
   font-size: .94rem;
 }
+.pub .actions a + a{ margin-left: 16px; }
 
 /* badges */
 .badge{

@@ -95,11 +95,11 @@
   <section class="card">
     <h3 class="card-label">Research Interests</h3>
     <ul class="interests">
-      <li>LLM Reasoning &amp; Test-time Scaling</li>
       <li>Agentic Systems &amp; Self-evolving Agents</li>
-      <li>Reinforcement Learning for LLMs</li>
-      <li>Data-centric AI</li>
-      <li>Multimodal Learning</li>
+      <li>LLM Reasoning &amp; Metacognition</li>
+      <li>Causal Representation Learning</li>
+      <li>World Models</li>
+      <li>Cognition-inspired AI</li>
     </ul>
   </section>
 
@@ -111,19 +111,57 @@
       <strong>Computer Science and Engineering</strong> at the
       <strong>University of California, San Diego</strong>,
       advised by Prof. <a href="https://pengtaoxie.github.io/" target="_blank" rel="noopener">Pengtao Xie</a>.
-    </p>
-    <p>
       Previously, I received my B.S. in <strong>Data Science</strong> from the
       <strong>University of Science and Technology Beijing</strong>,
       where I graduated in the top 7% of my class.
     </p>
     <p>
-      My current research focuses on <strong>pre-hoc reasoning</strong> and
-      <strong>metacognitive control</strong> for LLM systems &mdash; using lightweight
-      estimators and self-monitoring signals to <em>route</em>, <em>defend</em>,
-      and <em>self-improve</em> LLM agents at test time. I am actively seeking
-      Research Assistant / Visiting Researcher opportunities in agentic AI,
-      test-time scaling, and multimodal reasoning.
+      I am interested in how an agent turns what it has been through &mdash; environment,
+      experience, memory &mdash; into <em>abstract understanding it can act on</em>. My working
+      hypothesis is that the quality of that abstraction, rather than raw scale, is what
+      lets a system decide well; and that the same machinery, turned inward, is what would
+      let it reason about its own architecture and improve it. An agent that can model the
+      world should eventually be able to model itself.
+    </p>
+    <p>
+      My published work approaches this from two sides. The <strong>SCOPE</strong> line treats a
+      compact fingerprint over a fixed anchor set as a form of <em>structured memory</em>, and
+      uses it for pre-hoc reasoning &mdash; estimating how a decision will turn out before
+      committing to it &mdash; first for budget-aware LLM routing
+      (<a href="https://sullivan07043.github.io/SCOPE/" target="_blank" rel="noopener">SCOPE</a>, ICML 2026),
+      then for allocating detectors in prompt-injection defense
+      (<a href="https://arxiv.org/abs/2605.30837" target="_blank" rel="noopener">SCOUT</a>, EMNLP 2026).
+      The <a href="https://arxiv.org/abs/2605.14186" target="_blank" rel="noopener">metacognitive harness</a>
+      comes at it from the other side: instead of adding external supervision, it surfaces
+      self-knowledge the model already has &mdash; a sense of knowing before solving, a judgment
+      of learning after &mdash; and turns it into an explicit control interface at test time.
+    </p>
+    <p>
+      I am currently pursuing two threads. A <em>self-evolving agentic router</em> that analyzes
+      its own history &mdash; past decisions, feedback, consequences &mdash; and keeps refining its
+      decision policy online. And <em>semantic translation of latent variables under causal
+      constraints</em>, which uses causal structure to decode latent representations into
+      meanings expressible in natural language, bridging representation learning and the
+      language space.
+    </p>
+    <p>
+      I think the two converge. If an agent's reflection on what just happened is expressed
+      in a causal vocabulary rather than a purely associative one, it can approximate
+      <em>why</em> an outcome occurred rather than merely that it did &mdash; and from there reason
+      counterfactually about what it should have done instead. That is the step from
+      hindsight to foresight, and I believe it is what self-evolution has to mean in
+      practice. I am also increasingly drawn to <strong>world models</strong> as the substrate this
+      kind of reasoning will eventually need.
+    </p>
+    <p>
+      Outside the technical work, I keep returning to Wang Yangming's
+      <em>&#30693;&#34892;&#21512;&#19968;</em>&nbsp;&mdash; that knowing and acting are one thing, not two.
+      It is a fair description of what I want an agent to be: a system whose understanding
+      of the world and whose actions within it are not separate modules bolted together.
+    </p>
+    <p>
+      I am actively seeking <strong>PhD positions</strong> and research opportunities in agentic
+      systems, self-evolving agents, causal representation learning, and world models.
     </p>
   </section>
 

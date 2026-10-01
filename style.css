@@ -690,3 +690,4 @@ details.more summary{ color: var(--teal); }
 /* complete paper figures (2026-10) */
 .paper-thumb{ background: #fff; padding: 14px; }
 .paper-thumb img{ width: 100%; max-width: 100%; max-height: none; height: auto; }
+.paper-thumb a{ display: block; cursor: zoom-in; }

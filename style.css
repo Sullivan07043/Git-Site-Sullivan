@@ -676,3 +676,14 @@ details.more summary{ color: var(--teal); }
   .paper-thumb{ max-width: 420px; }
 }
 .block .links .soon{ align-self: center; }
+
+/* paper cards: figure on top, text below (2026-10, the applicant's choice) */
+.paper{ grid-template-columns: 1fr; gap: 16px; align-items: start; }
+.paper-thumb{ display: flex; justify-content: center; align-items: center; padding: 16px; }
+.paper-thumb img{ width: auto; max-width: 100%; max-height: 280px; }
+.paper-thumb.chart{ display: block; padding: 16px 20px; }
+.paper-thumb.chart .chart-svg{ max-width: 520px; max-height: 240px; }
+@media (max-width: 760px){ .paper-thumb{ max-width: none; } .paper-thumb img{ max-height: 240px; } }
+.paper-thumb.chart{ display: flex; flex-direction: column; align-items: center; background: var(--bg-2); }
+.paper-thumb.chart .chart-svg{ width: 380px; max-width: 100%; max-height: none; }
+.paper-thumb.chart .chart-title, .paper-thumb.chart .chart-legend{ width: 380px; max-width: 100%; }

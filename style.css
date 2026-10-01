@@ -629,3 +629,50 @@ details.more summary{ color: var(--teal); }
 .paper-thumb img{ max-height: 300px; width: auto; max-width: 100%; margin: 0 auto; }
 .paper-noimg .paper-body{ border-left: 3px solid var(--teal); padding-left: 16px; }
 @media (max-width: 760px){ .paper-thumb{ max-width: none; } }
+
+/* ============== Readable cards (2026-10, after the live review) ============== */
+.paper{ grid-template-columns: 300px 1fr; gap: 24px; align-items: center; }
+.paper-noimg{ grid-template-columns: 1fr; }
+.paper-thumb{ padding: 14px; min-height: 0; display: block; }
+.paper-thumb img{ max-height: none; width: 100%; height: auto; }
+.chart{ background: var(--bg-3); border: 1px solid var(--line); }
+.chart-title{ margin: 0 0 8px !important; font-size: .84rem !important; font-weight: 600; color: var(--text-soft) !important; letter-spacing: .02em; }
+.chart-svg{ width: 100%; height: auto; display: block; overflow: visible; }
+.ct-label{ font: 600 13px Inter, sans-serif; fill: var(--text-soft); }
+.ct-val{ font: 700 15px "Space Grotesk", Inter, sans-serif; fill: var(--text); }
+.ct-val-red{ fill: var(--red); }
+.ct-val-teal{ fill: var(--teal); }
+.ct-base{ fill: var(--line-2); }
+.ct-red{ fill: var(--red); }
+.ct-teal{ fill: var(--teal); }
+.ct-axis{ stroke: var(--line-2); stroke-width: 1; }
+.chart-legend{ margin: 8px 0 0 !important; font-size: .82rem !important; color: var(--muted) !important; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.sw{ display: inline-block; width: 10px; height: 10px; }
+.sw-base{ background: var(--line-2); }
+.sw-red{ background: var(--red); margin-left: 8px; }
+.sw-teal{ background: var(--teal); margin-left: -4px; }
+
+.theme-num{
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 1.6rem; font-weight: 700; line-height: 1;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.hero-links{ list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.hero-links a{
+  display: inline-block;
+  padding: 7px 16px;
+  border: 1.5px solid var(--text);
+  color: var(--text);
+  font-size: .9rem; font-weight: 600;
+}
+.hero-links a:hover{ background: var(--text); color: var(--bg); }
+
+.timeline li:first-child{ border-top: none; }
+
+@media (max-width: 760px){
+  .paper{ grid-template-columns: 1fr; }
+  .paper-thumb{ max-width: 420px; }
+}
+.block .links .soon{ align-self: center; }

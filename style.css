@@ -623,3 +623,9 @@ details.more summary{ color: var(--teal); }
 .news .date{ color: var(--teal); font-weight: 600; }
 .foot{ border-top: 2px solid var(--text); }
 .block .paper .stat-note{ font-size: .86rem; color: var(--muted); margin: -4px 0 10px; }
+/* paper cards: figure on top at full width (2026-10) */
+.paper{ grid-template-columns: 1fr; gap: 16px; }
+.paper-thumb{ min-height: 0; padding: 12px; }
+.paper-thumb img{ max-height: 300px; width: auto; max-width: 100%; margin: 0 auto; }
+.paper-noimg .paper-body{ border-left: 3px solid var(--teal); padding-left: 16px; }
+@media (max-width: 760px){ .paper-thumb{ max-width: none; } }

@@ -150,7 +150,7 @@
     <p class="note"><sup>&dagger;</sup> equal contribution</p>
 
     <article class="paper" id="pub-causalbridge">
-      <div class="paper-thumb"><img src="assets/causalbridge.png" alt="A rover on a new planet whose sensors measure everything in view but can name only a few things" loading="lazy"></div>
+      <div class="paper-thumb"><img src="assets/causalbridge.png" alt="Figure 1: a rover on a new planet measures everything in view but can name only a few things, and the causal graph that the numbers reveal" loading="lazy"></div>
       <div class="paper-body">
         <p class="paper-venue"><span class="badge">ICLR 2027 &middot; Under Review</span></p>
         <h3>How Causality Bridges the Semantic Gap</h3>
@@ -164,26 +164,17 @@
     </article>
 
     <article class="paper" id="pub-scout">
-<div class="paper-thumb chart" role="img" aria-label="Relative to an always-on GPT-4o judge set to 100, SCOUT has 54 attack success and 60 wall-clock">
-        <p class="chart-title">vs. always-on GPT-4o judge (= 100)</p>
-        <svg viewBox="0 0 300 150" class="chart-svg">
-          <text x="0" y="22" class="ct-label">Attack success</text>
-          <rect x="0" y="30" width="270" height="14" class="ct-base"/>
-          <rect x="0" y="48" width="145.8" height="14" class="ct-red"/>
-          <text x="152" y="59" class="ct-val ct-val-red">&#8722;46%</text>
-          <text x="0" y="92" class="ct-label">Wall-clock time</text>
-          <rect x="0" y="100" width="270" height="14" class="ct-base"/>
-          <rect x="0" y="118" width="162" height="14" class="ct-teal"/>
-          <text x="168" y="129" class="ct-val ct-val-teal">&#8722;40%</text>
-        </svg>
-        <p class="chart-legend"><span class="sw sw-base"></span>GPT-4o judge <span class="sw sw-red"></span><span class="sw sw-teal"></span>SCOUT</p>
-      </div>
+      <div class="paper-thumb"><img src="assets/scout.png" alt="Figure 1: detectors behave differently, SCOUT predicts and triages per request, and one threshold sets the safety-utility trade-off" loading="lazy"></div>
       <div class="paper-body">
         <p class="paper-venue"><span class="badge badge-accent">EMNLP 2026 &middot; Main</span></p>
         <h3>Send a SCOUT First: Pre-hoc Reasoning for Adaptive Detector Allocation in Prompt-Injection Defense</h3>
         <p class="authors"><strong class="me">Shuhao Zhang</strong><sup>&dagger;</sup>, Jiarui Li<sup>&dagger;</sup>, Qi Cao, Ruiyi Zhang, Pengtao Xie</p>
         <p class="tldr">Every prompt-injection detector stops some attacks and misses others. SCOUT predicts each detector's reliability and latency from how it behaved on similar inputs, then decides per request which detectors to run and whether to call an LLM judge.</p>
-        <p class="stat-note">Against an always-on GPT-4o judge: 46% lower attack success and 40% less wall-clock time, at a 5.1-point benign-utility cost.</p>
+        <ul class="stats">
+          <li><b>&minus;46%</b> attack success</li>
+          <li><b>&minus;40%</b> wall-clock</li>
+        </ul>
+        <p class="stat-note">Both against an always-on GPT-4o judge, at a 5.1-point benign-utility cost.</p>
         <p class="links">
           <a class="pill" href="https://arxiv.org/abs/2605.30837" target="_blank" rel="noopener">arXiv</a>
           <a class="pill" href="https://rockyli11.github.io/SCOUT/" target="_blank" rel="noopener">Project page</a>
@@ -192,7 +183,7 @@
     </article>
 
     <article class="paper" id="pub-scope">
-      <div class="paper-thumb"><img src="assets/scope.png" alt="SCOPE accuracy versus total cost: the SCOPE curve lies above every individual model" loading="lazy"></div>
+      <div class="paper-thumb"><img src="assets/scope.png" alt="Figure 1: other routers classify over known models, SCOPE predicts each model's length and correctness from its past behavior" loading="lazy"></div>
       <div class="paper-body">
         <p class="paper-venue"><span class="badge badge-accent">ICML 2026</span></p>
         <h3>Models Under SCOPE: Scalable and Controllable Routing via Pre-hoc Reasoning</h3>
@@ -210,24 +201,16 @@
     </article>
 
     <article class="paper" id="pub-metacog">
-<div class="paper-thumb chart" role="img" aria-label="Pooled accuracy rises from 48.3 to 56.9 with the harness">
-        <p class="chart-title">Pooled accuracy on three benchmarks (%)</p>
-        <svg viewBox="0 0 300 150" class="chart-svg">
-          <line x1="20" y1="130" x2="290" y2="130" class="ct-axis"/>
-          <rect x="55" y="41.5" width="70" height="88.5" class="ct-base"/>
-          <rect x="175" y="25.700000000000003" width="70" height="104.3" class="ct-red"/>
-          <text x="90" y="35.5" text-anchor="middle" class="ct-val">48.3</text>
-          <text x="210" y="19.700000000000003" text-anchor="middle" class="ct-val ct-val-red">56.9</text>
-          <text x="90" y="146" text-anchor="middle" class="ct-label">Frozen model</text>
-          <text x="210" y="146" text-anchor="middle" class="ct-label">+ Harness</text>
-        </svg>
-        <p class="chart-legend">No parameter updates</p>
-      </div>
+      <div class="paper-thumb"><img src="assets/metacog.png" alt="Figure 1: feeling of knowing and judgment of learning track correctness but do not guide reasoning effort" loading="lazy"></div>
       <div class="paper-body">
         <p class="paper-venue"><span class="badge">Preprint 2026</span></p>
         <h3>LLMs Know When They Know, but Do Not Act on It: A Metacognitive Harness for Test-time Scaling</h3>
         <p class="authors">Qi Cao, Yufan Wang, Peijia Qin, <strong class="me">Shuhao Zhang</strong>, Pengtao Xie</p>
         <p class="tldr">Strong LLMs can tell whether they know an answer, yet they do not act on it. The harness asks a frozen model for a feeling of knowing before it solves a problem and a judgment of learning after, and uses the two signals to accept, retry, or aggregate.</p>
+        <ul class="stats">
+          <li>pooled accuracy <b>48.3 &rarr; 56.9</b></li>
+          <li>no parameter updates</li>
+        </ul>
         <p class="links"><a class="pill" href="https://arxiv.org/abs/2605.14186" target="_blank" rel="noopener">arXiv</a></p>
       </div>
     </article>

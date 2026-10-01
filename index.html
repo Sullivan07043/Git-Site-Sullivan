@@ -7,7 +7,7 @@
 <meta name="description" content="Shuhao Zhang, Graduate Student Researcher and M.S. student in CSE at UC San Diego, advised by Prof. Pengtao Xie. Research on agent systems, LLM reasoning, causal representation learning, world models, and reinforcement learning.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <!-- Resolve theme before paint to avoid flash -->
@@ -15,11 +15,10 @@
 (function(){
   try{
     var saved = localStorage.getItem('theme');
-    var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    var theme = saved || (prefersLight ? 'light' : 'dark');
+    var theme = saved || 'light';
     document.documentElement.setAttribute('data-theme', theme);
   }catch(e){
-    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.setAttribute('data-theme', 'light');
   }
 })();
 </script>
@@ -28,13 +27,17 @@
 
 <header class="topbar">
   <a class="topbar-brand" href="#">Shuhao Zhang</a>
+  <nav class="topnav" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#experience">Experience</a>
+  </nav>
   <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle light/dark">
-    <!-- Sun icon (shown in dark mode) -->
     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <circle cx="12" cy="12" r="4.2"/>
       <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>
     </svg>
-    <!-- Moon icon (shown in light mode) -->
     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/>
     </svg>
@@ -51,7 +54,7 @@
     <h1 class="hero-name">Shuhao Zhang</h1>
     <p class="hero-title">Graduate Student Researcher (GSR) &middot; M.S. Student in CSE</p>
     <p class="hero-affiliation">University of California, San Diego</p>
-
+    <p class="tagline">Building agents that understand the world they act in, decide with that understanding, and improve themselves with it.</p>
     <ul class="socials" aria-label="Contact and profiles">
       <li>
         <a href="mailto:shz127@ucsd.edu" aria-label="Email" title="shz127@ucsd.edu">
@@ -89,12 +92,7 @@
         </a>
       </li>
     </ul>
-  </section>
-
-  <!-- RESEARCH INTERESTS -->
-  <section class="card">
-    <h3 class="card-label">Research Interests</h3>
-    <ul class="interests">
+    <ul class="chips" aria-label="Research interests">
       <li>Agent Systems</li>
       <li>LLM Reasoning</li>
       <li>Causal Representation Learning</li>
@@ -106,13 +104,15 @@
   </section>
 
   <!-- ABOUT -->
-  <section class="block">
+  <section class="block" id="about">
     <h2>About</h2>
     <p>
       I'm <strong>Shuhao Zhang</strong>, a <strong>Graduate Student Researcher</strong> and
       M.S. student in <strong>Computer Science and Engineering</strong> at
       <strong>UC San Diego</strong>, advised by Prof.
       <a href="https://pengtaoxie.github.io/" target="_blank" rel="noopener">Pengtao Xie</a>.
+      I also work with Prof.
+      <a href="https://yjzheng.com/" target="_blank" rel="noopener">Yujia Zheng</a> at UIUC.
       Before that I studied <strong>Big Data Management and Application</strong> at the
       <strong>University of Science and Technology Beijing</strong>.
     </p>
@@ -123,241 +123,212 @@
       decisions and actions it takes. Carried far enough, the same ability should let
       a system understand its own architecture and behavior, and improve those as well.
     </p>
-    <p>
-      My published work so far sits at the front of that loop. One line estimates how
-      a decision will turn out before making it. The other gets a model to use what it
-      already knows about its own reliability. My current work turns to understanding
-      itself. It recovers the causal structure of a system from its measurements and reads
-      what each hidden variable means.
-    </p>
-    <p>
-      I'm currently looking for <strong>PhD positions</strong>.
-    </p>
+    <p class="callout">I'm currently looking for <strong>PhD positions</strong> starting Fall 2027.</p>
+  </section>
+
+  <!-- RESEARCH THEMES -->
+  <section class="block" id="research">
+    <h2>Research</h2>
+    <div class="themes">
+      <div class="theme">
+        <div class="theme-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2.2"/><circle cx="19" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7 7.3l3.6 8.8M17 7.3l-3.6 8.8M7.2 6h9.6"/></svg>
+        </div>
+        <h3>Understand</h3>
+        <p>Turn what a system measures and experiences into causal, readable knowledge of how its world works.</p>
+        <p class="theme-work"><a href="#pub-causalbridge">CausalBridge</a> &middot; <a href="#experience-industry">Robot world models</a></p>
+      </div>
+      <div class="theme">
+        <div class="theme-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h6"/><path d="M10 12l5-6h5M10 12l5 6h5"/><circle cx="4" cy="12" r="1.6"/></svg>
+        </div>
+        <h3>Decide</h3>
+        <p>Predict how a choice will turn out before paying for it, and let that prediction steer the decision.</p>
+        <p class="theme-work"><a href="#pub-scope">SCOPE</a> &middot; <a href="#pub-scout">SCOUT</a></p>
+      </div>
+      <div class="theme">
+        <div class="theme-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/><circle cx="12" cy="12" r="2.4"/></svg>
+        </div>
+        <h3>Improve</h3>
+        <p>Use what a model knows about its own reliability to control its reasoning and improve its behavior over time.</p>
+        <p class="theme-work"><a href="#pub-metacog">Metacognitive Harness</a> &middot; Self-evolving systems</p>
+      </div>
+    </div>
   </section>
 
   <!-- NEWS -->
-  <section class="block">
+  <section class="block" id="news">
     <h2>News</h2>
     <ul class="news">
+      <li><span class="date">2026-09</span><span class="text">Started as a <strong>Graduate Student Researcher (GSR)</strong> in Prof. Pengtao Xie's lab at UC San Diego.</span></li>
+      <li><span class="date">2026-09</span><span class="text">Submitted <strong>How Causality Bridges the Semantic Gap</strong> (sole first author) to <strong>ICLR 2027</strong>.</span></li>
+      <li><span class="date">2026-08</span><span class="text"><strong>Send a SCOUT First</strong> is accepted to the <strong>EMNLP 2026 Main Conference</strong>.</span></li>
+      <li><span class="date">2026-07</span><span class="text">On-site moderator at the 3rd FM4LS workshop, <strong>ICML 2026</strong>, in Seoul. Grateful to Prof. Pengtao Xie for the opportunity.</span></li>
+      <li><span class="date">2026-06</span><span class="text">Joined <strong>AIBuildAI Inc.</strong> as a Research Intern on AI agents.</span></li>
+    </ul>
+    <details class="more">
+      <summary>Earlier news</summary>
+      <ul class="news">
+        <li><span class="date">2026-05</span><span class="text"><strong>Send a SCOUT First</strong> is on arXiv (<a href="https://arxiv.org/abs/2605.30837" target="_blank" rel="noopener">2605.30837</a>).</span></li>
+        <li><span class="date">2026-05</span><span class="text"><strong>Metacognitive Harness</strong> is on arXiv (<a href="https://arxiv.org/abs/2605.14186" target="_blank" rel="noopener">2605.14186</a>).</span></li>
+        <li><span class="date">2026-05</span><span class="text">Joined <a href="https://yjzheng.com/" target="_blank" rel="noopener">Prof. Yujia Zheng</a>'s group at UIUC as a Visiting Research Intern.</span></li>
+        <li><span class="date">2026-04</span><span class="text"><a href="https://sullivan07043.github.io/SCOPE/" target="_blank" rel="noopener">SCOPE</a> is accepted to <strong>ICML 2026</strong>.</span></li>
+        <li><span class="date">2025-10</span><span class="text">Joined Prof. Pengtao Xie's lab at UC San Diego as a Research Intern.</span></li>
+        <li><span class="date">2025-09</span><span class="text">Started my M.S. at UC San Diego.</span></li>
+        <li><span class="date">2025-06</span><span class="text">Graduated from USTB with a Bachelor of Management in Big Data Management and Application (top 7% of class).</span></li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="block" id="publications">
+    <h2>Publications</h2>
+    <p class="note"><sup>&dagger;</sup> equal contribution</p>
+
+    <article class="paper" id="pub-causalbridge">
+      <div class="paper-thumb paper-thumb-art" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="50" cy="52" r="18"/><circle cx="150" cy="52" r="18"/><circle cx="100" cy="148" r="18" stroke-dasharray="5 5"/>
+          <path d="M66 62l24 70M134 62l-24 70M68 52h64"/><path d="M84 128l6 5 1-8M116 128l-6 5-1-8M124 47l8 5-8 5"/>
+          <text x="100" y="154" text-anchor="middle" font-size="18" font-family="Inter, sans-serif" fill="currentColor" stroke="none">?</text>
+          <text x="100" y="190" text-anchor="middle" font-size="13" font-family="Inter, sans-serif" fill="currentColor" stroke="none">what does this variable mean?</text>
+        </svg>
+      </div>
+      <div class="paper-body">
+        <p class="paper-venue"><span class="badge">ICLR 2027 &middot; Under Review</span></p>
+        <h3>How Causality Bridges the Semantic Gap</h3>
+        <p class="authors"><strong class="me">Shuhao Zhang</strong>, Xuran Zhou, Han Guo, Pengtao Xie, Yujia Zheng</p>
+        <p class="tldr">Measurements record how a system behaves, yet they seldom say what its variables mean. CausalBridge reads the meaning of each unnamed variable from the causal role that it plays, and names observed and latent variables in questionnaires and robot systems more accurately than methods that rely on association.</p>
+        <p class="links"><span class="soon">Paper coming soon</span></p>
+      </div>
+    </article>
+
+    <article class="paper" id="pub-scout">
+      <div class="paper-thumb"><img src="assets/scout.png" alt="SCOUT: fingerprint-guided prediction and triage of prompt-injection detectors" loading="lazy"></div>
+      <div class="paper-body">
+        <p class="paper-venue"><span class="badge badge-accent">EMNLP 2026 &middot; Main</span></p>
+        <h3>Send a SCOUT First: Pre-hoc Reasoning for Adaptive Detector Allocation in Prompt-Injection Defense</h3>
+        <p class="authors"><strong class="me">Shuhao Zhang</strong><sup>&dagger;</sup>, Jiarui Li<sup>&dagger;</sup>, Qi Cao, Ruiyi Zhang, Pengtao Xie</p>
+        <p class="tldr">Every prompt-injection detector stops some attacks and misses others. SCOUT predicts each detector's reliability and latency from how it behaved on similar inputs, then decides per request which detectors to run and whether to call an LLM judge.</p>
+        <ul class="stats">
+          <li><b>&minus;46%</b> attack success</li>
+          <li><b>&minus;40%</b> wall-clock</li>
+        </ul>
+        <p class="stat-note">Both against an always-on GPT-4o judge, at a 5.1-point benign-utility cost.</p>
+        <p class="links"><a class="pill" href="https://arxiv.org/abs/2605.30837" target="_blank" rel="noopener">arXiv</a></p>
+      </div>
+    </article>
+
+    <article class="paper" id="pub-scope">
+      <div class="paper-thumb"><img src="assets/scope.png" alt="SCOPE: reasoning on model behaviors to route queries" loading="lazy"></div>
+      <div class="paper-body">
+        <p class="paper-venue"><span class="badge badge-accent">ICML 2026</span></p>
+        <h3>Models Under SCOPE: Scalable and Controllable Routing via Pre-hoc Reasoning</h3>
+        <p class="authors">Qi Cao<sup>&dagger;</sup>, <strong class="me">Shuhao Zhang</strong><sup>&dagger;</sup>, Ruizhe Zhou, Ruiyi Zhang, Peijia Qin, Pengtao Xie</p>
+        <p class="tldr">A service with many LLMs must choose one model for each query. SCOPE predicts the accuracy and the cost of every candidate model before any of them runs, so the router can trade cost for accuracy and handle models it has never seen.</p>
+        <ul class="stats">
+          <li>up to <b>95.1%</b> lower cost</li>
+          <li>up to <b>25.7%</b> higher accuracy</li>
+        </ul>
+        <p class="links">
+          <a class="pill" href="https://arxiv.org/abs/2601.22323" target="_blank" rel="noopener">arXiv</a>
+          <a class="pill" href="https://sullivan07043.github.io/SCOPE/" target="_blank" rel="noopener">Project page</a>
+        </p>
+      </div>
+    </article>
+
+    <article class="paper" id="pub-metacog">
+      <div class="paper-thumb"><img src="assets/metacog.png" alt="Metacognitive signals: feeling of knowing and judgment of learning" loading="lazy"></div>
+      <div class="paper-body">
+        <p class="paper-venue"><span class="badge">Preprint 2026</span></p>
+        <h3>LLMs Know When They Know, but Do Not Act on It: A Metacognitive Harness for Test-time Scaling</h3>
+        <p class="authors">Qi Cao, Yufan Wang, Peijia Qin, <strong class="me">Shuhao Zhang</strong>, Pengtao Xie</p>
+        <p class="tldr">Strong LLMs can tell whether they know an answer, yet they do not act on it. The harness asks a frozen model for a feeling of knowing before it solves a problem and a judgment of learning after, and uses the two signals to accept, retry, or aggregate.</p>
+        <ul class="stats">
+          <li>pooled accuracy <b>48.3 &rarr; 56.9</b></li>
+          <li>no parameter updates</li>
+        </ul>
+        <p class="links"><a class="pill" href="https://arxiv.org/abs/2605.14186" target="_blank" rel="noopener">arXiv</a></p>
+      </div>
+    </article>
+
+    <h3 class="subhead">Earlier work</h3>
+    <ul class="compact">
+      <li><strong>IDC-CDR: Cross-domain Recommendation based on Intent Disentanglement and Contrast Learning.</strong> Jing Xu, Mingxin Gan, Hang Zhang, <span class="me">Shuhao Zhang</span>. <em>Information Processing and Management</em>, 2024.</li>
+      <li><strong>Using Machine Learning Models for Short-Term Prediction of Dissolved Oxygen in a Microtidal Estuary.</strong> Mina Gachloo, Qianqian Liu, Yang Song, Guozhi Wang, <span class="me">Shuhao Zhang</span>, Nathan Hall. <em>Water</em> 16(14):1998, 2024.</li>
+    </ul>
+  </section>
+
+  <!-- RESEARCH EXPERIENCE -->
+  <section class="block" id="experience">
+    <h2>Research Experience</h2>
+    <ul class="timeline">
       <li>
-        <span class="date">2026-09</span>
-        <span class="text">Started as a <strong>Graduate Student Researcher (GSR)</strong> in Prof. Pengtao Xie's lab at UC San Diego.</span>
+        <span class="tl-date">Fall 2026 &ndash; now</span>
+        <div class="tl-body">
+          <p class="tl-role"><strong>Graduate Student Researcher</strong>, PXie Lab, UC San Diego</p>
+          <p class="tl-note">PI <a href="https://pengtaoxie.github.io/" target="_blank" rel="noopener">Prof. Pengtao Xie</a>. Research Intern in the same lab from Oct 2025. Lead of SCOUT, co-lead of SCOPE.</p>
+        </div>
       </li>
       <li>
-        <span class="date">2026-09</span>
-        <span class="text">Submitted <strong>How Causality Bridges the Semantic Gap</strong> (sole first author) to <strong>ICLR 2027</strong>.</span>
-      </li>
-      <li>
-        <span class="date">2026-08</span>
-        <span class="text">Our paper <strong>Send a SCOUT First</strong> has been accepted to the <strong>EMNLP 2026 Main Conference</strong>!</span>
-      </li>
-      <li>
-        <span class="date">2026-07</span>
-        <span class="text">Served as on-site moderator at the 3rd FM4LS workshop, <strong>ICML 2026</strong>, in Seoul. Grateful to Prof. Pengtao Xie for the opportunity.</span>
-      </li>
-      <li>
-        <span class="date">2026-06</span>
-        <span class="text">Joined <strong>AIBuildAI Inc.</strong> as a Research Intern on AI agents.</span>
-      </li>
-      <li>
-        <span class="date">2026-05</span>
-        <span class="text">Our paper <strong>Send a SCOUT First</strong> is now on arXiv (<a href="https://arxiv.org/abs/2605.30837" target="_blank" rel="noopener">2605.30837</a>); submitted to <strong>EMNLP 2026</strong>.</span>
-      </li>
-      <li>
-        <span class="date">2026-05</span>
-        <span class="text">Our paper <strong>Metacognitive Harness</strong> is on arXiv (<a href="https://arxiv.org/abs/2605.14186" target="_blank" rel="noopener">2605.14186</a>).</span>
-      </li>
-      <li>
-        <span class="date">2026-05</span>
-        <span class="text">Joined <a href="https://yjzheng.com/" target="_blank" rel="noopener">Prof. Yujia Zheng</a>'s group at UIUC as a Visiting Research Intern.</span>
-      </li>
-      <li>
-        <span class="date">2026-04</span>
-        <span class="text">Our paper <a href="https://sullivan07043.github.io/SCOPE/" target="_blank" rel="noopener">SCOPE</a> has been accepted to <strong>ICML 2026</strong>!</span>
-      </li>
-      <li>
-        <span class="date">2025-10</span>
-        <span class="text">Joined Prof. Pengtao Xie's lab at UC San Diego as a Research Intern.</span>
-      </li>
-      <li>
-        <span class="date">2025-09</span>
-        <span class="text">Started my M.S. at UC San Diego.</span>
-      </li>
-      <li>
-        <span class="date">2025-06</span>
-        <span class="text">Graduated from USTB with a Bachelor of Management in Big Data Management and Application (top 7% of class).</span>
+        <span class="tl-date">May 2026 &ndash; now</span>
+        <div class="tl-body">
+          <p class="tl-role"><strong>Visiting Research Intern</strong>, Yujia Zheng&rsquo;s Group, UIUC</p>
+          <p class="tl-note">Advisor <a href="https://yjzheng.com/" target="_blank" rel="noopener">Prof. Yujia Zheng</a>. Project leader of CausalBridge.</p>
+        </div>
       </li>
     </ul>
   </section>
 
-  <!-- SELECTED PUBLICATIONS -->
-  <section class="block">
-    <h2>Selected Publications</h2>
-    <p class="desc"><sup>&dagger;</sup> denotes equal contribution.</p>
-
-    <article class="pub">
-      <h3>How Causality Bridges the Semantic Gap</h3>
-      <p class="authors"><strong class="me">Shuhao Zhang</strong>, Xuran Zhou, Han Guo, Pengtao Xie, Yujia Zheng</p>
-      <p class="venue"><strong>ICLR 2027</strong> <span class="badge">Under Review</span></p>
-      <p class="desc">
-        Measurements record how a system behaves, yet they seldom say what its variables mean.
-        CausalBridge reads the meaning of each unnamed variable from the causal role that it plays,
-        and it names observed and latent variables in questionnaires and robot systems more
-        accurately than methods that rely on association. It is a step toward agents that form a
-        causal and abstract understanding of the environment they observe.
-      </p>
-    </article>
-
-    <article class="pub">
-      <h3>Send a SCOUT First: Pre-hoc Reasoning for Adaptive Detector Allocation in Prompt-Injection Defense</h3>
-      <p class="authors"><strong class="me">Shuhao Zhang</strong><sup>&dagger;</sup>, Jiarui Li<sup>&dagger;</sup>, Qi Cao, Ruiyi Zhang, Pengtao Xie</p>
-      <p class="venue"><strong>EMNLP 2026</strong> <span class="badge badge-accent">Accepted (Main)</span></p>
-      <p class="desc">
-        Reframed prompt-injection defense as <em>per-input detector allocation</em>.
-        SCOUT summarizes each detector's behavior as a fingerprint over a fixed anchor set,
-        then trains a small predictor (Qwen3-4B; SFT + GRPO) to estimate, for every new
-        request, which detectors are reliable and how long each will take. A single operator
-        threshold trades safety vs. latency. Cuts attack-success rate by <strong>46%</strong>
-        and wall-clock by <strong>40%</strong> vs. an always-on GPT-4o judge, at a 5.1-point
-        drop in benign utility, and transfers to BIPIA, IPI, and IHEval.
-      </p>
-      <p class="actions">
-        <a href="https://arxiv.org/abs/2605.30837" target="_blank" rel="noopener">arXiv &#8599;</a>
-      </p>
-    </article>
-
-    <article class="pub">
-      <h3>Models Under SCOPE: Scalable and Controllable Routing via Pre-hoc Reasoning</h3>
-      <p class="authors">Qi Cao<sup>&dagger;</sup>, <strong class="me">Shuhao Zhang</strong><sup>&dagger;</sup>, Ruizhe Zhou, Ruiyi Zhang, Peijia Qin, Pengtao Xie</p>
-      <p class="venue"><strong>ICML 2026</strong> <span class="badge badge-accent">Accepted</span></p>
-      <p class="desc">
-        SCOPE is a budget-aware LLM routing framework that predicts how accurate and how
-        expensive each model will be before running it, enabling controllable cost&ndash;accuracy
-        trade-offs and naturally handling new models. Up to <strong>95.1% cost reduction</strong>
-        or <strong>25.7% accuracy gain</strong> under different priorities.
-      </p>
-      <p class="actions">
-        <a href="https://arxiv.org/abs/2601.22323" target="_blank" rel="noopener">arXiv &#8599;</a>
-        <a href="https://sullivan07043.github.io/SCOPE/" target="_blank" rel="noopener">Project &#8599;</a>
-      </p>
-    </article>
-
-    <article class="pub">
-      <h3>LLMs Know When They Know, but Do Not Act on It: A Metacognitive Harness for Test-time Scaling</h3>
-      <p class="authors">Qi Cao, Yufan Wang, Peijia Qin, <strong class="me">Shuhao Zhang</strong>, Pengtao Xie</p>
-      <p class="venue"><strong>Preprint</strong> 2026</p>
-      <p class="desc">
-        A metacognitive harness that separates monitoring from reasoning. The model emits
-        a pre-solve feeling-of-knowing and a post-solve judgment-of-learning signal, turned
-        into an explicit test-time control interface for retry or aggregation. On a fixed
-        Claude Sonnet-4.6 base, raised pooled accuracy from <strong>48.3 to 56.9</strong>
-        without any parameter updates, exceeding the strongest leaderboard entries on
-        HLE-Verified, LiveCodeBench v6, and R-Bench-V.
-      </p>
-      <p class="actions">
-        <a href="https://arxiv.org/abs/2605.14186" target="_blank" rel="noopener">arXiv &#8599;</a>
-      </p>
-    </article>
-
-    <article class="pub">
-      <h3>IDC-CDR: Cross-domain Recommendation based on Intent Disentanglement and Contrast Learning</h3>
-      <p class="authors">Jing Xu, Mingxin Gan, Hang Zhang, <strong class="me">Shuhao Zhang</strong></p>
-      <p class="venue"><strong>Information Processing and Management</strong> 2024</p>
-      <p class="desc">
-        A cross-domain recommendation model that disentangles user intent for stronger
-        transfer, with an emphasis on interpretability of latent intent factors.
-      </p>
-    </article>
-
-    <article class="pub">
-      <h3>Using Machine Learning Models for Short-Term Prediction of Dissolved Oxygen in a Microtidal Estuary</h3>
-      <p class="authors">Mina Gachloo, Qianqian Liu, Yang Song, Guozhi Wang, <strong class="me">Shuhao Zhang</strong>, Nathan Hall</p>
-      <p class="venue"><strong>Water</strong> 16(14):1998, 2024</p>
-      <p class="desc">
-        Applied ML models for short-term prediction of dissolved oxygen, with relevance
-        to healthcare / biological time-series modeling.
-      </p>
-    </article>
-
-  </section>
-
-  <!-- ACADEMIC SERVICE -->
-  <section class="block">
-    <h2>Academic Service</h2>
-
-    <article class="pub">
-      <h3>3rd Workshop on Multi-modal Foundation Models and Large Language Models for Life Sciences</h3>
-      <p class="venue"><strong>ICML 2026</strong> &middot; Seoul, Korea <span class="badge badge-accent">On-site Moderator</span></p>
-      <p class="desc">
-        Served as on-site session moderator for this full-day workshop at <strong>ICML 2026</strong>,
-        organized by Prof. Pengtao Xie, James Zou, Le Song, Eran Segal, and others. Ran the live
-        program, with seven invited talks, a panel discussion, and two poster sessions. Introduced
-        the speakers, kept the sessions on time, and moderated the audience Q&amp;A, bridging
-        discussion between the ML-methods and biomedical-domain halves of the audience. Grateful
-        to Prof. Pengtao Xie for the opportunity.
-      </p>
-      <p class="actions">
-        <a href="https://icml.cc/virtual/2026/workshop/54063" target="_blank" rel="noopener">ICML page &#8599;</a>
-        <a href="https://icml2026fm4ls.github.io/pages/schedule.html" target="_blank" rel="noopener">Schedule &#8599;</a>
-      </p>
-    </article>
-  </section>
-
-  <!-- RESEARCH EXPERIENCE -->
-  <section class="block">
-    <h2>Research Experience</h2>
-
-    <article class="pub">
-      <h3>Graduate Student Researcher (GSR), PXie Lab, UC San Diego</h3>
-      <p class="venue">PI: <a href="https://pengtaoxie.github.io/" target="_blank" rel="noopener">Prof. Pengtao Xie</a> &middot; Fall 2026 &ndash; present &middot; Research Intern in the same lab, Oct 2025 &ndash; Sep 2026</p>
-      <p class="desc">
-        Project leader and first author of SCOUT (<strong>EMNLP 2026</strong>). Co-first author and
-        main contributor of SCOPE (<strong>ICML 2026</strong>). Contributing author of the
-        Metacognitive Harness, where I grounded the design in the cognitive-psychology literature
-        on metacognition. Built and maintain the training and evaluation infrastructure of SCOUT
-        and SCOPE: multi-GPU harnesses, GRPO pipelines, and reproducible benchmark releases.
-      </p>
-    </article>
-
-    <article class="pub">
-      <h3>Visiting Research Intern, Yujia Zheng&rsquo;s Group, UIUC</h3>
-      <p class="venue">Advisor: <a href="https://yjzheng.com/" target="_blank" rel="noopener">Prof. Yujia Zheng</a> &middot; May 2026 &ndash; present</p>
-      <p class="desc">
-        Project leader and sole first author of CausalBridge (under review at <strong>ICLR 2027</strong>),
-        which joins causal representation learning with the semantics of language models. Shaped
-        the problem with Prof. Zheng, designed the method, built the experimental pipeline across
-        five questionnaires and three robotics settings, and wrote the paper.
-      </p>
-    </article>
-
-  </section>
-
   <!-- INDUSTRY EXPERIENCE -->
-  <section class="block">
+  <section class="block" id="experience-industry">
     <h2>Industry Experience</h2>
+    <ul class="timeline">
+      <li>
+        <span class="tl-date">Jun &ndash; Sep 2026</span>
+        <div class="tl-body">
+          <p class="tl-role"><strong>Research Intern, AI Agents</strong>, AIBuildAI Inc.</p>
+          <p class="tl-note">Robot world models for an autonomous ML-engineering agent. In the public RT-1 study the agent post-trained a 2B NVIDIA Cosmos world model in 29 hours with no human intervention (PSNR 17.75 &rarr; 25.56). <a href="https://www.aibuildai.io/blog-robot-world-model" target="_blank" rel="noopener">Blog</a></p>
+        </div>
+      </li>
+      <li>
+        <span class="tl-date">Jul &ndash; Aug 2024</span>
+        <div class="tl-body">
+          <p class="tl-role"><strong>Algorithm Intern</strong>, Shanghai Huapu Zhihui Automation System Engineering Co., Ltd.</p>
+          <p class="tl-note">Simulation and AGV scheduling for an airport warehouse system.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-    <article class="pub">
-      <h3>Research Intern, AI Agents, AIBuildAI Inc.</h3>
-      <p class="venue">La Jolla, CA &middot; Jun &ndash; Sep 2026</p>
-      <p class="desc">
-        Responsible for the robot world-model direction of the company&rsquo;s autonomous
-        ML-engineering agent, which takes a task description and then designs, trains, and
-        evaluates models on its own. In the public RT-1 study, the agent post-trained a
-        2B-parameter NVIDIA Cosmos world model in 29 hours with no human intervention and raised
-        PSNR from 17.75 to 25.56 and SSIM from 0.716 to 0.845 under the official protocol.
-      </p>
-      <p class="actions">
-        <a href="https://www.aibuildai.io/blog-robot-world-model" target="_blank" rel="noopener">Blog &#8599;</a>
-      </p>
-    </article>
+  <!-- EDUCATION -->
+  <section class="block" id="education">
+    <h2>Education</h2>
+    <ul class="timeline">
+      <li>
+        <span class="tl-date">2025 &ndash; 2027</span>
+        <div class="tl-body"><p class="tl-role"><strong>M.S. in Computer Science and Engineering</strong>, UC San Diego</p></div>
+      </li>
+      <li>
+        <span class="tl-date">2021 &ndash; 2025</span>
+        <div class="tl-body"><p class="tl-role"><strong>Bachelor of Management in Big Data Management and Application</strong>, University of Science and Technology Beijing</p><p class="tl-note">Top 7% of class. Exchange quarter at UC San Diego, Fall 2023.</p></div>
+      </li>
+    </ul>
+  </section>
 
-    <article class="pub">
-      <h3>Algorithm Intern, Shanghai Huapu Zhihui Automation System Engineering Co., Ltd.</h3>
-      <p class="venue">Jul &ndash; Aug 2024</p>
-      <p class="desc">
-        Built a simulation model and AGV scheduling algorithms for an airport warehouse system.
-      </p>
-    </article>
+  <!-- SERVICE -->
+  <section class="block" id="service">
+    <h2>Academic Service</h2>
+    <ul class="timeline">
+      <li>
+        <span class="tl-date">Jul 2026</span>
+        <div class="tl-body">
+          <p class="tl-role"><strong>On-site Session Moderator</strong>, 3rd Workshop on Multi-modal Foundation Models and Large Language Models for Life Sciences, ICML 2026, Seoul</p>
+          <p class="tl-note">Ran the full-day program: seven invited talks, a panel, and two poster sessions. <a href="https://icml.cc/virtual/2026/workshop/54063" target="_blank" rel="noopener">ICML page</a> &middot; <a href="https://icml2026fm4ls.github.io/pages/schedule.html" target="_blank" rel="noopener">Schedule</a></p>
+        </div>
+      </li>
+    </ul>
   </section>
 
   <footer class="foot">
@@ -371,7 +342,7 @@
   var btn = document.getElementById('themeToggle');
   if(!btn) return;
   btn.addEventListener('click', function(){
-    var current = document.documentElement.getAttribute('data-theme') || 'dark';
+    var current = document.documentElement.getAttribute('data-theme') || 'light';
     var next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     try{ localStorage.setItem('theme', next); }catch(e){}

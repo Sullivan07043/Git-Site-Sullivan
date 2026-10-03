@@ -191,6 +191,10 @@ strong{ color: var(--text); font-weight: 600; }
 }
 .block h2::before{ content: ""; width: 12px; height: 12px; background: var(--red); flex: none; }
 .block p{ margin: 0 0 14px; color: var(--text-soft); }
+/* Justified body text (both edges aligned), with hyphenation to avoid wide gaps */
+.block p, .news .text, .compact li{ text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.block p.paper-venue, .block p.note, .block p.links,
+.block p.lead, .block p.callout, .block .theme p{ text-align: left; }
 .block p em{ color: var(--teal); font-style: italic; font-weight: 500; }
 
 .block p.lead{

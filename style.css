@@ -318,7 +318,6 @@ details.more[open] summary::before{ content: "\2212 "; }
 .timeline li{ display: grid; grid-template-columns: 130px 1fr; gap: 18px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .tl-date{ font-family: ui-monospace, "DM Mono", monospace; font-size: .86rem; font-weight: 600; color: var(--teal); padding-top: 2px; }
 .block .tl-role{ margin: 0; color: var(--text); font-size: .98rem; line-height: 1.5; }
-.block .tl-role.tl-minor{ color: var(--text-soft); font-size: .95rem; }
 .block .tl-note{ margin: 3px 0 0; font-size: .92rem; line-height: 1.55; }
 
 /* Footer */

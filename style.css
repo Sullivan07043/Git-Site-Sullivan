@@ -194,7 +194,7 @@ strong{ color: var(--text); font-weight: 600; }
 /* Justified body text (both edges aligned), with hyphenation to avoid wide gaps */
 .block p, .news .text, .compact li{ text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
 .block p.paper-venue, .block p.note, .block p.links,
-.block p.lead, .block p.callout, .block .theme p{ text-align: left; }
+.block p.lead, .block p.callout{ text-align: left; }
 .block p em{ color: var(--teal); font-style: italic; font-weight: 500; }
 
 #about p:not(.lead):not(.callout){ font-size: 1.07rem; }
@@ -219,19 +219,18 @@ strong{ color: var(--text); font-weight: 600; }
 }
 .block p.callout strong{ color: var(--red); }
 
-/* Research themes */
-.themes{ display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-.theme{
-  border: 1px solid var(--line-2);
-  border-top: 3px solid var(--teal);
-  padding: 18px 18px 14px;
-  transition: border-color .15s ease;
+/* Research directions (About) */
+.directions{ list-style: none; padding: 0; margin: 0 0 18px; }
+.directions li{
+  position: relative;
+  padding-left: 20px; margin-bottom: 12px;
+  font-size: 1.07rem; line-height: 1.65;
+  color: var(--text-soft);
+  text-align: justify; -webkit-hyphens: auto; hyphens: auto;
 }
-.theme:hover{ border-color: var(--teal); border-top-color: var(--red); }
-.theme-num{ font-family: var(--display); font-size: 1.5rem; font-weight: 700; line-height: 1; color: var(--red); margin-bottom: 10px; }
-.theme h3{ font-size: 1.08rem; margin-bottom: 6px; }
-.block .theme p{ font-size: .93rem; line-height: 1.55; margin-bottom: 10px; }
-.block .theme p.theme-work{ font-size: .86rem; color: var(--muted); margin: 0; }
+.directions li::before{ content: ""; position: absolute; left: 2px; top: .65em; width: 7px; height: 7px; background: var(--red); }
+.directions li strong{ color: var(--text); }
+.directions .proj{ display: block; margin-top: 2px; font-size: .94rem; color: var(--muted); text-align: left; }
 
 /* News */
 .news{ list-style: none; padding: 0; margin: 0; }
